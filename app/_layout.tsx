@@ -9,6 +9,7 @@ export const unstable_settings = {
   anchor: '(tabs)',
 };
 
+// Inside app/_layout.tsx
 export default function RootLayout() {
   const colorScheme = useColorScheme();
 
@@ -16,7 +17,8 @@ export default function RootLayout() {
     <ThemeProvider value={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
-        <Stack.Screen name="modal" options={{ presentation: 'modal', title: 'Modal' }} />
+        <Stack.Screen name="login" options={{ title: 'Login', headerShown: false }} />
+        <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
       </Stack>
       <StatusBar style="auto" />
     </ThemeProvider>
