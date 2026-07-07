@@ -1,6 +1,7 @@
 import { db } from "./firebase";
 import { collection, addDoc, getDocs, deleteDoc, doc, query, where } from "firebase/firestore";
 import { auth } from "./firebase";
+import pantrySlice from "@/store/pantrySlice";
 
 const pantryCollection = collection(db, "pantryItems");
 
@@ -37,3 +38,4 @@ export const deleteItem = async (itemId: string) => {
     const itemDoc = doc(db, "pantryItems", itemId);
     await deleteDoc(itemDoc);
 };
+
